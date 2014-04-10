@@ -155,6 +155,9 @@ body{
 	background: transparent url("../img/inversion_tool.png") no-repeat;
 }
 
+.configuracion_sidebar{
+	background: transparent url("../img/conf_tool.png") no-repeat;
+}
 
 
 
@@ -308,6 +311,7 @@ body{
 	background: #f2fcff;
 	margin-top: 12px;
 	overflow: scroll;
+	overflow-x: hidden;
 }
 
 .lista_azul_feature li{
@@ -322,7 +326,7 @@ body{
 }
 
 .lista_feature_tiempo{
-	right: 10px;
+	right: 20px;
 	font-weight: bold;
 	position: absolute;
 }
@@ -351,7 +355,7 @@ body{
 	color: #7C7E84;
 	text-align: right;
 	float: right;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .titulo_verde{
@@ -373,10 +377,26 @@ body{
 	position: relative;
 }
 
+.separador_contenido_m{
+	width: 700px;
+	height: 3px;
+	background: #FFF;
+	margin: 8px 0 20px 0;
+	position: relative;
+}
+
 .separador_contenido2{
 	width: 700px;
 	height: 1px;
 	background: #E4E5E8;
+	margin-top: 1px;
+	position: absolute;
+}
+
+.separador_contenido2_m{
+	width: 700px;
+	height: 1px;
+	background: #d1d2d4;
 	margin-top: 1px;
 	position: absolute;
 }
@@ -417,37 +437,65 @@ body{
 	height: 45px;
 	border-left: 1px solid #CBCED3;
 }
-.isg_cuentas{
+.isg_cuentas, .isg_numero{
 	left: 10px;
 }
 
-.isg_disponible{
+.isg_numero{
+	width: 78px;
+	text-align: left;
+}
+
+.isg_producto{
+	left: 88px;
+	width: 166px;
+	border-left: 1px solid #CBCED3;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.isg_saldo_actual{
 	left: 157px;
+	line-height: 16px;
+	padding-top: 6px;
+	height: 39px;
 }
 
-.isg_transito{
+.isg_transito, .isg_capital{
 	left: 265px;
+
 }
 
-.isg_picnoracion_garantia{
+.isg_picnoracion_garantia, .isg_fecha_apertura{
 	left: 373px;
 	line-height: 16px;
 	padding-top: 6px;
 	height: 39px;
 }
 
-.isg_picnoracion_cobranza{
+.isg_picnoracion_cobranza, .isg_fecha_cobranza{
 	left: 481px;
+	line-height: 16px;
+	padding-top: 6px;
+	height: 39px;
+
+}
+
+.isg_saldo_disponible{
+	left: 589px;
 	line-height: 16px;
 	padding-top: 6px;
 	height: 39px;
 }
 
-.isg_saldo{
+.isg_fecha_vencimiento{
 	left: 589px;
+	line-height: 16px;
+	padding-top: 6px;
+	height: 39px;
 }
 
-.lac_cuentas, .lac_disponible, .lac_transito, .lac_pic_garantia, .lac_pic_cobranza, .lac_saldo{
+.lac_cuentas, .lac_saldo_actual, .lac_transito, .lac_pic_garantia, .lac_pic_cobranza, .lac_saldo_disponible, .lac_numero, .lac_producto, .lac_capital, .lac_fecha_apertura, .lac_fecha_renovacion, .lac_fecha_vencimiento{
 	position: absolute;
 }
 
@@ -457,11 +505,24 @@ body{
 	padding-left: 10px;
 }
 
-.lac_cuentas a{
+.lac_numero{
+	left: 0px;
+	width: 78px;
+	padding-left: 10px;
+}
+
+.lac_cuentas a, .lac_producto a{
 	color: #2B96C5;
 }
 
-.lac_disponible{
+.lac_producto{
+	padding-left: 10px;
+	left: 89px;
+	width: 166px;
+	text-align: left;
+}
+
+.lac_saldo_actual{
 	left: 158px;
 	width: 97px;
 	padding-right: 10px;
@@ -475,11 +536,23 @@ body{
 	text-align: right;
 }
 
+.lac_capital{
+	left: 266px;
+	width: 97px;
+	text-align: right;
+}
+
 .lac_pic_garantia{
 	left: 374px;
 	width: 97px;
 	padding-right: 10px;
 	text-align: right;
+}
+
+.lac_fecha_apertura{
+	left: 374px;
+	width: 107px;
+	text-align: center;
 }
 
 .lac_pic_cobranza{
@@ -489,11 +562,23 @@ body{
 	text-align: right;
 }
 
-.lac_saldo{
+.lac_fecha_renovacion{
+	left: 482px;
+	width: 107px;
+	text-align: center;
+}
+
+.lac_saldo_disponible{
 	left: 590px;
 	width: 98px;
 	padding-right: 10px;
 	text-align: right;
+}
+
+.lac_fecha_vencimiento{
+	left: 590px;
+	width: 108px;
+	text-align: center;
 }
 
 .separador_lista_azul{
@@ -506,6 +591,10 @@ body{
 
 .sla_1{
 	left: 157px;
+}
+
+.sla_1_1{
+	left: 88px;
 }
 
 .sla_2{
@@ -620,5 +709,200 @@ body{
 }
 
 
+.inversion_detalle{
+	position: relative;
+	margin-top: 15px;
+}
+
+.ide_gris{
+	width: 100%;
+	height: 32px;
+	background: #F4F4F4;
+}
+
+.saldo_inicial, .saldo_final{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #40444C;
+	font-weight: bold;
+	line-height: 32px;
+	text-shadow: 0 1px 0 #FFF;
+}
+
+.saldo_inicial{
+	float: left;
+	margin-left: 10px;
+}
+
+.saldo_final{
+	float: right;
+	margin-right: 10px;
+}
+
+.per_container{
+	width: 100%;
+	height: 4px;
+	background: #D3EBD1;
+}
+
+.per_value{
+	height: 4px;
+	background: #4EB246;
+}
+
+.ide_valores{
+	width: 700px;
+	height: 55px;
+	position: relative;
+	margin-top: 10px;
+}
+
+.ide_valores_center{
+	display: table;
+	width: auto;
+	height: 55px;
+	margin: 0 auto;
+}
 
 
+.ide_valores_center p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	color: #444;
+}
+
+
+.ide_valores_titulo{
+	float: left;
+	text-align: right;
+}
+
+.ide_valores_cantidad{
+	float: left;
+}
+
+.ide_valores_titulo p{
+	float: right;
+	clear: right;
+	padding-left: 10px;
+	background: #fbfbfb;
+}
+
+.ide_valores_cantidad p{
+	float: left;
+	clear: left;
+	padding-right: 10px;
+	padding-left: 4px;
+	background: #fbfbfb;
+}
+
+.ide_fecha_inicio, .ide_fecha_fin{
+	position: absolute;
+	top: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	color: #444;
+}
+
+.ide_fecha_inicio{
+	left: 0px;
+	padding: 0 10px;
+	background: #fbfbfb;
+}
+
+.ide_fecha_fin{
+	right: 0;
+	padding: 0 10px;
+	background: #fbfbfb;
+}
+
+.linea_inversion_detalle{
+	width: 700px;
+	height: 1px;
+	position: absolute;
+	top: 8px;
+	z-index: -1;
+	background: #eee;
+}
+
+.transferencia_wrapper{
+	position: relative;
+	width: 700px;
+	height: 20px;
+}
+
+.tf_mb5{
+	margin-bottom: 5px;
+}
+.tf_mb20{
+	margin-bottom: 20px;
+}
+
+.texto_formulario{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 20px;
+	color: #454545;
+}
+
+.tf_col1{
+	position: absolute;
+	margin-left: 0;
+	top: 0;
+}
+.tf_col2{
+	position: absolute;
+	margin-left: 360px;
+	top: 0;
+}
+
+.tf_col11{
+	position: absolute;
+	margin-left: 0px;
+	top: 0;
+}
+
+.tf_col12{
+	position: absolute;
+	margin-left: 240px;
+	top: 0;
+}
+
+.tf_col13{
+	position: absolute;
+	margin-left: 480px;
+	top: 0;
+}
+
+.select_cuentas{
+	display: block;
+	width: 340px;
+}
+
+.select_bancos{
+	display: block;
+	width: 220px;
+}
+
+.input_transferencia_1col{
+	width: 700px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 15px;
+}
+
+.input_transferencia_2col{
+	width: 340px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 15px;
+}
+
+.input_transferencia_3col{
+	width: 220px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 15px;
+}

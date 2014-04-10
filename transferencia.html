@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<title>Catscap</title>
+</head>
+<body>
+	<div class="toolbar_dummy"><div class="dark_line"></div></div>
+	<div class="g960">
+		<div class="main">
+	
+			<div id="sidebar">
+				<a href="index.html" class="logo"></a>
+				<div class="shadow_left"></div>
+				<div class="shadow_right"></div>
+				<div class="toolbar_side">
+					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
+					<a href="transferencia.html" class="boton_sidebar transferencia_sidebar">Transferencia</a>
+					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
+					<a href="inversion.html" class="boton_sidebar inversion_sidebar">Inversión</a>
+					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
+					<a href="configuracion.html" class="boton_sidebar configuracion_sidebar">Configuración</a>
+				</div>
+			</div> <!-- Termina Sidebar  -->
+
+			<div id="navigation_bar">
+				<a href="mis_cuentas.html" class="boton_menu">
+					<span class="icono_texto">
+						<div class="mis_cuentas_img"></div>Mis Cuentas
+					</span>
+				</a>
+				<a href="inversiones.html" class="boton_menu">
+					<span class="icono_texto">
+						<div class="inversiones_img"></div>Inversiones
+					</span>
+				</a>
+				<a href="reportes.html" class="boton_menu">
+					<span class="icono_texto">
+						<div class="reportes_img"></div>Reportes
+					</span>
+				</a>
+				<a href="#" class="boton_cerrar_sesion">Cerrar Sesión</a>
+			</div>  <!-- Termina Navigation Bar --> 
+
+			<div id="content">
+				
+				<h2 class="titulo_verde">Realizar nueva transferencia</h2>
+				<div class="separador_contenido_m"><div class="separador_contenido2_m"></div></div>
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col1">Desde mi cuenta</p>
+					<p class="texto_formulario tf_col2">Cuenta Destinatario</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<select class="select_cuentas tf_col1">
+						<option value="">Mi Cuenta Eje</option>
+						<option value="">Cuenta de ahorro</option>
+	 					<option value="">Cuenta Infantil</option>
+	  					<option value="">Cuenta DPF</option>
+					</select>
+					<select class="select_cuentas tf_col2">
+						<option value="">Fernando Montes</option>
+						<option value="">Lazaro Cardenas</option>
+	 					<option value="">Venustiano Carranza</option>
+	  					<option value="">Porfirio Diaz</option>
+					</select> 
+				</div>
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col1">Monto</p>
+					<p class="texto_formulario tf_col2">Fecha de Aplicación</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<input type="text" name="monto" value="" class="input_transferencia_2col tf_col1">
+					<input type="text" name="fecha" value="" class="input_transferencia_2col tf_col2">
+				</div>
+
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col1">Concepto</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<input type="text" name="concepto" value="" class="input_transferencia_1col tf_col1">
+				</div>
+				
+				<input type="submit" value="Realizar Transferencia">
+
+
+
+				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
+
+				<h2 class="titulo_verde">Agregar una cuenta</h2>
+				<div class="separador_contenido_m"><div class="separador_contenido2_m"></div></div>
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col1">Descripción</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<input type="text" name="descripcion" value="" class="input_transferencia_1col tf_col1">
+				</div>
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col1">Nombre</p>
+					<p class="texto_formulario tf_col2">Apellido</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<input type="text" name="nombre" value="" class="input_transferencia_2col tf_col1">
+					<input type="text" name="apellido" value="" class="input_transferencia_2col tf_col2">
+				</div>
+
+				<div class="transferencia_wrapper tf_mb5">
+					<p class="texto_formulario tf_col11">Bando de destino</p>
+					<p class="texto_formulario tf_col12">Clabe</p>
+					<p class="texto_formulario tf_col13">Celular</p>
+				</div>
+
+				<div class="transferencia_wrapper tf_mb20">
+					<select class="select_bancos tf_col11">
+						<option value="">Banamex</option>
+						<option value="">IXE Banco</option>
+	 					<option value="">HSBC Mexico</option>
+	  					<option value="">Bancomer</option>
+					</select> 
+					<input type="text" name="clabe" value="" class="input_transferencia_3col tf_col12">
+					<input type="text" name="celular" value="" class="input_transferencia_3col tf_col13">
+				</div>
+
+				<input type="submit" value="Agregar Cuenta">
+
+			</div> <!-- Termina Content -->
+
+		</div> <!-- Termina Main -->
+	</div> <!-- Termina Wrapper -->
+</body>
+</html>
