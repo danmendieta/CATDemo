@@ -2,100 +2,280 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/docs.min.css" />
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+  
+  var jumboHeight = $('.jumbotron').outerHeight();
+function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+}
+
+$(window).scroll(function(e){
+    parallax();
+});
+
+$(window).load(function() {
+  $("#tokenInputForm").hide();
+$("#cliente").show();
+  $("#clienteInput").show();
+  $("#password").show();
+  $("#passwordInput").show();
+  $("#recuperar").show();
+  $("#btnConfirmar").hide();
+  $("#btnLogin").show();
+  $("#Bienvenido").hide();
+});
+
+  
+
+
+</script>
 	<title>Catscap</title>
 </head>
 <body>
-	<div class="toolbar_dummy"><div class="dark_line"></div></div>
-	<div class="g960">
-		<div class="main">
-	
-			<div id="sidebar">
-				<a href="index.html" class="logo"></a>
-				<div class="shadow_left"></div>
-				<div class="shadow_right"></div>
-				<div class="toolbar_side">
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="transferencia.html" class="boton_sidebar transferencia_sidebar">Transferencia</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="inversion.html" class="boton_sidebar inversion_sidebar">Inversión</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="configuracion.html" class="boton_sidebar configuracion_sidebar">Configuración</a>
-				</div>
-			</div> <!-- Termina Sidebar  -->
 
-			<div id="navigation_bar">
-				<a href="mis_cuentas.html" class="boton_menu">
-					<span class="icono_texto">
-						<div class="mis_cuentas_img"></div>Mis Cuentas
-					</span>
-				</a>
-				<a href="inversiones.html" class="boton_menu">
-					<span class="icono_texto">
-						<div class="inversiones_img"></div>Inversiones
-					</span>
-				</a>
-				<a href="reportes.html" class="boton_menu">
-					<span class="icono_texto">
-						<div class="reportes_img"></div>Reportes
-					</span>
-				</a>
-				<a href="#" class="boton_cerrar_sesion">Cerrar Sesión</a>
-			</div>  <!-- Termina Navigation Bar --> 
+  <div class="g960">
+    <div class="main">
+  
+      <div  id="sidebarLogin">
+        <a href="principal.html" class="logo"></a>
+        <div class="shadow_left"></div>
+        <div class="shadow_right"></div>
+      </div> <!-- Termina Sidebar  -->
 
-			<div id="content">
-				
-				<div id="feature">
-					<div id="grafica_feature">
-						<p class="titulo_verde_feature">Movimientos cuenta eje</p>
-						<div id="grafica_raphael"><img src="img/grafica_placeholder.png" /></div>
-						<p id="mes_grafica">Marzo 2014</p>
-					</div>
-					<div id="saldo_feature">
-						<p class="titulo_verde_feature">Saldo Disponible</p>
-						<p class="saldo_actual">$15,953</p>
-					</div>
-					<div id="inversiones_feature">
-						<p class="titulo_verde_feature">Inversiones <span class="inversiones_tiempo">T. Restante</span></p>
-						<ul class="lista_azul_feature">
-							<li>
-								<span class="lista_feature">Inversion paquete 1</span>
-								<span class="lista_feature_tiempo">23 h</span>
-							</li>
-							<li class="lista_feature_non">
-								<span class="lista_feature">Paquete 2, Inversion</span>
-								<span class="lista_feature_tiempo">17 d</span>
-							</li>
-							<li>
-								<span class="lista_feature">Tercera Cuenta</span>
-								<span class="lista_feature_tiempo">23 d</span>
-							</li>
-							<li class="lista_feature_non">
-								<span class="lista_feature">4to tipo de inversion</span>
-								<span class="lista_feature_tiempo">35 d</span>
-							</li>
-							<li>
-								<span class="lista_feature">Quinta</span>
-								<span class="lista_feature_tiempo">41 d</span>
-							</li>
-							<li class="lista_feature_non">
-								<span class="lista_feature">Sexta Inversion</span>
-								<span class="lista_feature_tiempo">45 d</span>
-							</li>
-							<li>
-								<span class="lista_feature">Septima, paquete 3</span>
-								<span class="lista_feature_tiempo">62 d</span>
-							</li>
+      <div id="navigation_bar">
 
-						</ul>
-					</div>
-				</div> <!-- Termina Feature -->
+      </div>  <!-- Termina Navigation Bar --> 
 
-				
+   
 
-			</div> <!-- Termina Content -->
+    </div> <!-- Termina Main -->
+  </div> <!-- Termina Wrapper -->
 
-		</div> <!-- Termina Main -->
-	</div> <!-- Termina Wrapper -->
+
+
+
+
+<header class="navbar-default loginBar" id="top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand"></a>
+    </div>
+
+  </div>
+</header>
+
+
+<div class="bg"></div>
+<div class="jumbotron">
+  
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4">
+
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="modal-dialog tm100">
+        <div class="modal-content">
+        <div class="modal-header">
+        <p class="modal-title">Iniciar Sesión</p>
+      </div>
+          <div class="modal-body">
+
+
+            <div class="row">
+              <div id="cliente" class="col-xs-12">
+                <p>Cliente:</p>
+                <input id="clienteInput" type="password" class="form-control" id="cliente" placeholder="Cliente">
+                  <div class="espacio22"></div>
+              </div>
+              <div id="Bienvenido" class="col-xs-12 bienvido">
+                <p>Binevenido:
+                <label id="user"></label>
+                </p>
+              </div>
+              
+
+              <div id="password" class="col-xs-12">
+                <p>Contraseña:</p>
+                <input type="password" class="form-control" id="pass" placeholder="Contraseña">
+                  <div class="espacio22"></div>
+              </div>
+              
+              <div id="tokenInputForm" class="col-xs-12">
+                <p></p>
+                <div class="row">
+                <div class="col-xs-12">
+                  <p>Ingrese de su tarjeta de seguridad: </p>
+                </div>
+                
+                  
+
+                    <p></p>
+                  <div class="row">
+                    <div class="col-xs-12"></div>
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label textLabel">A08</label>
+                        <div class="col-sm-8">
+                          <input class="form-control tokenInput" type="password"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-xs-12"></div>
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label textLabel">B06</label>
+                        <div class="col-sm-8">
+                          <input class="form-control tokenInput" type="password"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+             <!--  <div id="recuperar" class="col-xs-12">
+                <p><center><a href="#" class="btn btn-default btnNuevo">Recuperar contraseña</a></center></p>
+
+              </div> -->
+
+            </div>
+              
+
+          </div>
+          <div class="modal-footer">
+            <button id="btnLogin" type="button" class="btn btn-success "><i class="fa fa-sign-in"></i> Iniciar Sesión</button>
+            <a href="principal.html"  id="btnConfirmar"type="button" class="btn btn-success "><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div>
+    </div>
+    <!-- <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="textAhorro">
+      <h1>CAJA DE AHORRO</h1>
+  </div>
+
+    </div> -->
+    
+  </div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-6 textoLogin">
+      
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+
+    </div>
+    
+  </div>
+
+    
+
+</div>
+
+<div class="container">
+<div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="300x200" src="http://www.lodagu.com/images/credito-hipotecario2.jpg" style="width: 300px; height: 200px;">
+          <div class="caption">
+            <h3><b>Crédito Hipotecario</b></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget orci adipiscing lorem tincidunt consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus in.</p>
+            <p><a href="#" class="btn btn-success" role="button">Más Información</a> 
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="300x200" src="http://static.cnnexpansion.com/media/2012/01/16/credito-autos.jpg" style="width: 300px; height: 200px;">
+          <div class="caption">
+            <h3><b>CrediAuto</b></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget orci adipiscing lorem tincidunt consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus in.</p>
+            <p><a href="#" class="btn btn-success" role="button">Más Información</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="300x200" src="http://mexico.cnn.com/media/2011/07/13/medico.jpg" style="width: 300px; height: 200px;">
+          <div class="caption">
+            <h3><b>Gastos Medicos</b></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget orci adipiscing lorem tincidunt consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus in.</p>
+            <p><a href="#" class="btn btn-success" role="button">Más Información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div id="footer">
+      <div class="container">
+        <p class="muted credit">Caja de Ahorro</p>
+      </div>
+    </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+  
+  var jumboHeight = $('.jumbotron').outerHeight();
+function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+}
+
+$(window).scroll(function(e){
+    parallax();
+});
+
+
+
+//Formulario de login
+
+$("#btnLogin").click(function(event) {
+
+
+
+  $("#cliente").hide();
+  $("#clienteInput").hide();
+  $("#password").hide();
+  $("#passwordInput").hide();
+  $("#btnLogin").hide();
+  $("#btnConfirmar").show();
+  $("#recuperar").hide();
+   $("#Bienvenido").show();
+   $("#tokenInputForm").show();
+   $("#user").text("Octavio");
+});
+
+
+</script>
+
 </body>
 </html>

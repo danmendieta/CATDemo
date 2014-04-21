@@ -3,6 +3,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/docs.min.css" />
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<title>Catscap - Inversiones</title>
 </head>
 <body>
@@ -11,16 +19,19 @@
 		<div class="main">
 	
 			<div id="sidebar">
-				<a href="index.html" class="logo"></a>
+				<a href="principal.html" class="logo"></a>
 				<div class="shadow_left"></div>
 				<div class="shadow_right"></div>
 				<div class="toolbar_side">
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="transferencia.html" class="boton_sidebar transferencia_sidebar">Transferencia</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="inversion.html" class="boton_sidebar inversion_sidebar">Inversión</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="configuracion.html" class="boton_sidebar configuracion_sidebar">Configuración</a>
+					<div class="sep_sidebar2"></div>
+					<div class="separador"></div>
+					<a href="transferencia.html" type="button" class="btn btn-default b100"><i class="fa fa-arrow-circle-o-right"></i>  Transferencia</a>
+					<div class="separador"></div>
+          	        <a  href="inversion.html" type="button" class="btn btn-default b100"><i class="fa fa-money"></i>  Inversión</a>
+          	    
+          	        <div class="separador"></div>
+          	        <a  href="configuracion.html" type="button" class="btn btn-default b100"><i class="fa fa-cog"></i>  Configuración</a>
+          	   
 				</div>
 			</div> <!-- Termina Sidebar  -->
 
@@ -33,6 +44,11 @@
 				<a href="inversiones.html" class="boton_menu">
 					<span class="icono_texto">
 						<div class="inversiones_img"></div>Inversiones
+					</span>
+				</a>
+				<a href="creditos.html" class="boton_menu">
+					<span class="icono_texto">
+						<div class="mis_cuentas_img"></div>Créditos
 					</span>
 				</a>
 				<a href="reportes.html" class="boton_menu">
@@ -88,6 +104,8 @@
 
 
 
+
+
 				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
 
 				<h2 id="cuenta_1" class="titulo_verde">DPF - 7 Dias</h2>
@@ -97,9 +115,12 @@
 						<p class="saldo_inicial">$100,000.00</p>
 						<p class="saldo_final">$100,650.00</p>
 					</div>
-					<div class="per_container">
-						<div class="per_value" style="width: 42%;">	</div>
-					</div>
+					<div class="progress progress-striped" style="width: 100%">
+				      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+				        <span class="sr-only">40% Complete (success)</span>
+				      </div>
+				    </div>
+
 					<div class="ide_valores">
 						<div class="ide_fecha_inicio">
 							15-May-2014
@@ -132,9 +153,11 @@
 						<p class="saldo_inicial">$50,000.00</p>
 						<p class="saldo_final">$50,650.00</p>
 					</div>
-					<div class="per_container">
-						<div class="per_value" style="width: 92%;">	</div>
-					</div>
+					<div class="progress progress-striped" style="width: 100%">
+				      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+				        <span class="sr-only">92% Complete (success)</span>
+				      </div>
+				    </div>
 					<div class="ide_valores">
 						<div class="ide_fecha_inicio">
 							15-May-2014
@@ -167,9 +190,11 @@
 						<p class="saldo_inicial">$15,000.00</p>
 						<p class="saldo_final">$15,650.00</p>
 					</div>
-					<div class="per_container">
-						<div class="per_value" style="width: 20%;">	</div>
-					</div>
+						<div class="progress progress-striped" style="width: 100%">
+					      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+					        <span class="sr-only">20% Complete (success)</span>
+					      </div>
+					    </div>
 					<div class="ide_valores">
 						<div class="ide_fecha_inicio">
 							15-May-2014

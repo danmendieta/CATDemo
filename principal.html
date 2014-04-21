@@ -12,12 +12,40 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript">
-        $(window).on('load', function () {
-            $('.selectpicker').selectpicker({
-            });
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Movimientos'],
+          ['2007',  500],
+          ['2008',  700],
+          ['2009',  600],
+          ['2010',  1030],
+          ['2011',  1030],
+          ['2012',  1030],
+          ['2013',  1030],
+          ['2014',  1030]
+        ]);
 
-            // $('.selectpicker').selectpicker('hide');
-        });
+     
+
+
+
+        var options = {
+          title: 'Movimientos Cuenta Eje'
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+
+
+       
+
+
+
+
+
     </script>
 	<title>Catscap</title>
 </head>
@@ -54,11 +82,11 @@
 						<div class="inversiones_img"></div>Inversiones
 					</span>
 				</a>
-				<a href="creditos.html" class="boton_menu">
-					<span class="icono_texto">
-						<div class="mis_cuentas_img"></div>Créditos
-					</span>
-				</a>
+        <a href="creditos.html" class="boton_menu">
+          <span class="icono_texto">
+            <div class="mis_cuentas_img"></div>Créditos
+          </span>
+        </a>
 				<a href="reportes.html" class="boton_menu">
 					<span class="icono_texto">
 						<div class="reportes_img"></div>Reportes
@@ -68,27 +96,85 @@
 			</div>  <!-- Termina Navigation Bar --> 
 
 			<div id="content">
+				<div class='HrsAcceso'>Último acceso: 10/04/2014</div>
+				<div class='UsrName'>Bienvenido Octavio Martinez</div>
+				<div class="espacioSmall"></div>
+		
+
+			<div class="tarjeta">
+				<div class="row">
 				
-				<h2 class="titulo_verde">Descargar reporte en formato PDF</h2>
-				<div class="separador_contenido_m"><div class="separador_contenido2_m"></div></div>
+          		<div class="col-md-8 col-sm-8">
+          			 <div id="chart_div" style="width: 100%; height: 300px;"></div>
+          				
+          			</div>
+          		<div class="col-md-4 col-sm-4">
+          		<h3>Saldo disponible</h3>
+          				<p class="saldo_actual">
+          					$15,953.00
+          				</p>
+    <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <colgroup>
+        <col class="col-xs-8">
+        <col class="col-xs-4">
+      </colgroup>
+      <thead>
+        <tr>
+          
+          <th>Inversiones</th>
+          <th>Tiempo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          
+          <td>Inversión paquete 1</td>
+          <td>
+            23h
+          </td>
+        </tr>
+        <tr>
+          
+          <td>Inversión paquete 2</td>
+          <td>
+            17d
+          </td>
+        </tr>
+        <tr>
+          
+          <td>Tercera cuenta</td>
+          <td>
+            23d
+          </td>
+        </tr>
+        <tr>
+          
+          <td>4to tipo de inversión</td>
+          <td>
+            35d
+          </td>
+        </tr>
+        <tr>
+          
+          <td>Sexta inversión</td>
+          <td>
+            41d
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-				<div class="transferencia_wrapper tf_mb5">
-					<p class="texto_formulario tf_col1">Selecciona el mes</p>
-				</div>
-
-				<div class="transferencia_wrapper tf_mb20">
 
 
-					<select class="selectpicker bla bla bli">
-						<option value="">Marzo 2014</option>
-						<option value="">Febrero 2014</option>
-	 					<option value="">Enero 2014</option>
-					</select>
-					<br>
 
-					<input type="submit" value="Descargar" class="btn btn-success">
-				</div>
+  </div>
+          		</div>
+          	</div>
+          	</div>
 
+
+				
 
 			</div> <!-- Termina Content -->
 

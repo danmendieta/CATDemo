@@ -46,9 +46,10 @@ body{
 .toolbar_dummy{
 	width: 100%;
 	height: 60px;
-	background: #2b6e38;
+	background: #2f7037;
 	position: absolute;
-	border-bottom: 2px solid #FFF;
+	top: 0;
+	border-bottom: 2px  #2f7037;
 }
 .dark_line{
 	width: 100%;
@@ -90,12 +91,40 @@ body{
 	position: relative;
 }
 
+
+#sidebarLogin{
+	width: 220px;
+	height: 220px;
+	float: left;
+	background: #ffffff;
+	position: relative;
+}
+
+.login_bar{
+	width: 340px;
+	height: 500px;
+	margin-left: 300px;
+	float: left;
+	background: #fbfbfb url("../img/gradient.png") repeat-x;
+	position: relative;
+}
+
 .logo{
+	width: 184px;
+	height: 159px;
+	background: transparent url("../img/logo.jpg") no-repeat;
+	display: block;
+	margin: 18px 0 0 57px;
+}
+
+
+
+.logo_login{
 	width: 184px;
 	height: 159px;
 	background: transparent url("../img/logo.png") no-repeat;
 	display: block;
-	margin: 15px 0 0 18px;
+	margin: 15px auto;
 }
 
 
@@ -126,12 +155,54 @@ body{
 }
 
 .sep_sidebar{
-	height: 2px;
+	height: 22px;
 	background: #FFF;
 }
 .sep_sidebar2{
 	height: 1px;
 	background: #E4E5E8;
+}
+
+.input_wrapper_text{
+	position: relative;
+}
+
+.input_wrapper_name{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 32px;
+	margin-left: 38px;
+	color: #4da767;
+	position: absolute;
+}
+
+
+
+.username_campo, .password_campo{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 16px;
+	width: 280px;
+	height: 30px;
+	/*padding: 4px;*/
+	margin-bottom: 10px;
+	margin-left: 30px;
+	text-indent: 70px;
+	border:1px solid #ddd;
+	color: #313131;
+}
+
+
+.password_campo{
+	text-indent: 98px;
+}
+
+.login_input{
+	float: left;
+	width: 280px;
+	height: 30px;
+	margin-top: 2px;
+	margin-left: 30px;
 }
 
 .boton_sidebar{
@@ -185,8 +256,13 @@ body{
 
 
 .icono_texto{
+	font-size: 14px;
 	display: inline-block;
 	text-align: left;
+}
+
+.icono_texto:hover{
+	color: #dddddd;
 }
 
 .mis_cuentas_img{
@@ -219,8 +295,7 @@ body{
 .boton_cerrar_sesion{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	font-weight: bold;
-	color: #BAD0BF;
+	color: #fff;
 	text-decoration: none;
 
 	width: auto;
@@ -234,6 +309,11 @@ body{
 	background-position: 0 12px;
 	text-indent: 20px;
 }
+
+.boton_cerrar_sesion:hover{
+	color: #dddddd;
+}
+
 
 #feature{
 	width: 698px;
@@ -285,10 +365,10 @@ body{
 .saldo_actual{
 	width: 265px;
 	height: 60px;
+
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 38px;
+	font-size: 30px;
 	line-height: 60px;
-	text-align: center;
 	margin-top: 15px;
 	color: #4EB246;
 }
@@ -618,7 +698,7 @@ body{
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 30px;
-	width: 688px;
+	width: 100%;
 	height: 30px;
 	background: #f9fbf7;
 	border: 1px solid #CBCED3;
@@ -906,3 +986,256 @@ body{
 	font-size: 15px;
 	line-height: 15px;
 }
+
+
+.espacio{
+	padding-top: 80px;}
+
+.espacioSmall{
+	padding-top: 30px;}
+	
+
+.tarjeta{
+	width: 100%;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 2px;
+	-webkit-box-shadow: 0px 0px 2px #aaa;
+  -moz-box-shadow: 0px 0px 2px #aaa;
+}
+
+.tarjeta h2{
+	margin-top: -10px;
+	font-size: 15px;
+}
+
+.b100{
+	width: 100%;
+}
+
+.separador{
+	height: 15px;
+}
+
+.UsrName{
+	font-size: 17px;
+	color: #555;
+}
+
+.UsrName h1{
+	font-size: 23px;
+	color: #555;
+}
+
+
+.UsrName h2{
+	font-size: 16px;
+	color: #333;
+}
+
+.HrsAcceso{
+	font-size: 15px;
+	text-align: right;
+	color: #aaa;
+}
+
+
+.table-responsive{
+	font-size: 12px;
+}
+
+
+.comboDer{
+	text-align: right;
+}
+
+.form-horizontal{
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+.form-group{
+	text-decoration: none;
+	height: 30px;
+	
+}
+
+
+
+@media (max-width: 767px) {
+  .form-group{
+	
+	height: 50px;
+	
+}
+
+.control-label{
+	padding-bottom: 10px;
+}
+}
+
+
+.exito{
+	color:#2b6e38;
+}
+
+
+.section-colored.home{
+      background: #15a9d9 url(1-1920x1080.jpg) 100% 100% no-repeat;
+   }
+
+
+   .bg {
+   	background:  url(1-1920x1080.jpg) no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 600px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+
+  height: 600px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+}
+
+  
+    
+   .section-colored.home h2{
+      margin: 0;
+     color: #fff;
+  
+   }
+   
+  .section-colored.home{
+     text-align: center;
+   }
+ 
+   }
+   
+  .section-colored.home h2{
+     font-size: 20px;
+     margin: 0;
+ 
+     }
+   
+   .section-colored.home h2 {
+       margin-bottom: 30px;
+    }
+
+
+.contenidoA{
+	height: 500px;
+}
+
+
+#footer{
+	
+	height: 100px;
+	background-color: #e8e8e8;
+
+}
+
+
+#footer .container{
+	padding-top: 30px;
+}
+
+
+.tm100{
+	width: 100%;
+}
+
+
+.espacio22{
+	height: 20px;
+}
+
+
+.espacio100{
+	height: 100px;
+}
+
+
+
+.modal-dialog .modal-body p{
+	font-size: 15px;
+	color: #777;
+	text-shadow: 0px 0px #777;
+}
+
+.btnNuevo{
+	font-size: 13px;
+	color: #777;
+	text-shadow: 0px 0px #777;
+
+	margin-bottom: -40px;
+}
+
+.modal-dialog .modal-header p{
+	text-align: center;
+	font-size: 19px;
+	color: #777;
+	margin-bottom: -5px;
+	text-shadow: 0px 0px #777;
+}
+
+
+.textAhorro{
+	text-align: right;
+	text-shadow: 2px 2px 15px #000;
+}
+
+
+
+.loginBar{
+	margin-top: -160px;
+	height: 60px;
+}
+
+.siderbarLogin{
+	height: 10px;
+}
+
+
+.textoLogin{
+	margin-top: -250px;
+}
+
+
+
+@media (max-width: 767px) {
+	.textoLogin{
+		text-align: center;
+	color: #555555;
+	margin-top: 70px;
+	margin-bottom: 50px;
+}
+
+.textoLogin h1{
+	font-size: 20px
+}
+}
+
+
+.tokenInput{
+	font-size: 20px;
+}
+
+
+.bienvenido p{
+	font-size: 20px;
+}
+
+.textLabel{
+	padding-top: 10px;
+	color: #666;
+	text-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+

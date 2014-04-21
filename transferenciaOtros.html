@@ -8,15 +8,22 @@
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-select.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-modal.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-modal-bs3patch.css" />
+    <script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+	
+	
 	<title>Catscap</title>
 	<script type="text/javascript">
         $(window).on('load', function () {
         	$( "#TransCuentaPropia" ).show();
         	$( "#TransCuentaPropiaConfirmar" ).hide();
+        	$( "#cerrarCta" ).hide();
+        	$( "#NuevaCuenta" ).show();
+        	$( "#NuevaCuenta2" ).hide();
             $('.selectpicker').selectpicker({
             });
 
@@ -75,15 +82,15 @@
 				<div class='UsrName'><h1>Realizar nueva transferencia</h1></div>
 				<div class="espacioSmall"></div>
 				 <div class="btn-group btn-group-justified">
-			      <a href='transferencia.html' class="btn btn-success" role="button">Cuentas propias</a>
-			      <a href='transferenciaOtros.html' class="btn btn-default" role="button">Otros Socios CAT</a>
+			      <a href='transferencia.html' class="btn btn-default" role="button">Cuentas propias</a>
+			      <a href='transferenciaOtros.html' class="btn btn-success" role="button">Otros Socios CAT</a>
 			      <a href='transferenciasInter.html' class="btn btn-default" role="button">Interbancarias</a>
 			    </div>
 			    <div class="separador_contenido_m"><div class="separador_contenido2_m"></div></div>
 				
 
 				<div id='TransCuentaPropia'>
-					<div class='UsrName'><h2>Transferencia a Cuenta Propia</h2></div>
+					<div class='UsrName'><h2>Transferencia de Socios CAT</h2></div>
 					<div class="espacioSmall"></div>
 						
 							<form class="form-horizontal" role="form">
@@ -112,21 +119,30 @@
 
 
 						      <div class="form-group">
+						        <label class="col-sm-4 control-label"></label>
+						        <div class="col-sm-8">
+						          <button  class="btn btn-default" data-toggle="modal" data-target="#full-width" ><i class="fa fa-plus-circle"></i>  Agregar Cuenta</button>
+
+
+						        </div>
+						      </div>
+
+
+						      <div class="form-group">
 						        <label class="col-sm-4 control-label">Importe</label>
 						        <div class="col-sm-8">
 						          <input type="number" class="form-control" id="importe" placeholder="$ Importe">
 						        </div>
 						      </div>
 
-
-						       <div class="form-group">
+						      <div class="form-group">
 						        <label class="col-sm-4 control-label">Token</label>
 						        <div class="col-sm-8">
 						          <input type="text" class="form-control" id="token" placeholder="Token">
 						        </div>
 						      </div>
 
-						      <!-- <div class="form-group">
+						     <!--  <div class="form-group">
 						        <label class="col-sm-4 control-label">Fecha de Aplicación</label>
 						        <div class="col-sm-8">
 						          <input type="Date" class="form-control" id="FechaApp" placeholder="Fecha">
@@ -145,7 +161,7 @@
 
 
 				<div id='TransCuentaPropiaConfirmar'>
-					<div class='UsrName'><h2>Transferencia a Cuenta Propia</h2></div>
+					<div class='UsrName'><h2>Transferencia de Socios CAT</h2></div>
 					<div class="espacioSmall"></div>
 						<center><div class="exito" id='exito'>Operación realizada exitosamente <i class="fa fa-check-circle"></i></div></center>
 							<form class="form-horizontal" role="form">
@@ -163,6 +179,13 @@
 						        </div>
 						      </div>
 
+						      <div class="form-group">
+						        <label class="col-sm-4 control-label">Destinatario</label>
+						        <div class="col-sm-8">
+						         	<label>Ma. Teresa Montenegro</label>
+						        </div>
+						      </div>
+
 
 						      <div class="form-group">
 						        <label class="col-sm-4 control-label">Importe</label>
@@ -170,20 +193,22 @@
 						          <label id="txtImporte"></label>
 						        </div>
 						      </div>
-
-						     <!--  <div class="form-group">
-						        <label class="col-sm-4 control-label">Fecha de Aplicación</label>
-						        <div class="col-sm-8">
-						          <label id="ctaFecha"></label>
-						        </div>
-						      </div> -->
-
-						      <div class="form-group">
+								
+								<div class="form-group">
 						        <label class="col-sm-4 control-label">Token</label>
 						        <div class="col-sm-8">
 						          <label id="txtToken"></label>
 						        </div>
 						      </div>
+
+
+
+						   <!--    <div class="form-group">
+						        <label class="col-sm-4 control-label">Fecha de Aplicación</label>
+						        <div class="col-sm-8">
+						          <label id="ctaFecha"></label>
+						        </div>
+						      </div> -->
 
 						      <div id='idFolio' class="form-group">
 						        <label class="col-sm-4 control-label">Folio</label>
@@ -197,7 +222,7 @@
 						          <a  id="cancelar" class="btn btn-success"><i class="fa fa-ban"></i>  Cancelar</a>
 						          <a  id="aceptar2" class="btn btn-success"><i class="fa fa-check-circle"></i>  Aceptar</a>
 						          <a  id="comprobante" class="btn btn-success"><i class="fa fa-ticket"></i>  Comprobante</a>
-						          <a  id="aceptar3" href="transferencia.html" class="btn btn-success"><i class="fa fa-check-circle"></i>  Aceptar</a>
+						          <a  href='transferenciaOtros.html' id="aceptar3" class="btn btn-success"><i class="fa fa-check-circle"></i>  Aceptar</a>
 						        </div>
 						      </div>
 						    </form>
@@ -206,7 +231,24 @@
 
 
 				
-
+	<!-- Agregar Cuenta -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -215,6 +257,104 @@
 
 		</div> <!-- Termina Main -->
 	</div> <!-- Termina Wrapper -->
+
+<div id="full-width" class="modal container fade" tabindex="-1" style="display: none;">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Registro de Socios CAT</h4>
+  </div>
+  <div class="modal-body">
+    
+
+	
+				<div id='NuevaCuenta'>
+					
+					<div class="espacioSmall"></div>
+						
+							<form class="form-horizontal" role="form">
+						      <div class="form-group">
+						        <label class="col-sm-4 control-label">Número de Cuenta</label>
+						        <div class="col-sm-8">
+						          	<input type="number" class="form-control" id="cuenta" placeholder="Cuenta">
+						        </div>
+						      </div>
+
+							<div class="form-group">
+						        <label class="col-sm-4 control-label">Beneficiario</label>
+						        <div class="col-sm-8">
+						          	<input type="text" class="form-control" id="Bene" placeholder="Beneficiario" readonly="true">
+						        </div>
+						      </div>
+							
+							<div class="form-group">
+						        <label class="col-sm-4 control-label">Ingrese Folio</label>
+						        <div class="col-sm-8">
+						          	<input type="text" class="form-control" id="token" placeholder="Folio">
+						        </div>
+						      </div>
+						     
+
+						      
+						      
+						    </form>
+
+				</div>
+
+
+				<div id='NuevaCuenta2'>
+					<center><div class="exito" id='exito'>Registro finalizado exitosamente <i class="fa fa-check-circle"></i></div></center>
+					<div class="espacioSmall"></div>
+						
+							<form class="form-horizontal" role="form">
+						      <div class="form-group">
+						        <label class="col-sm-4 control-label">Número de Cuenta</label>
+						        <div class="col-sm-8">
+						          	<label id="nummCTA"></label>
+						        </div>
+						      </div>
+
+							<div class="form-group">
+						        <label class="col-sm-4 control-label">Beneficiario</label>
+						        <div class="col-sm-8">
+						          	<label id="Benefe"></label>
+						        </div>
+						      </div>
+							
+							<div class="form-group">
+						        <label class="col-sm-4 control-label">Folio</label>
+						        <div class="col-sm-8">
+						          	<label id="tonken"></label>
+						        </div>
+						      </div>
+						     
+
+						      
+						      
+						    </form>
+
+						  <center><div class="exito">La cuenta registrada quedará habilitada despues de 30 minutos</div></center>
+
+				</div>
+
+
+
+  </div>
+  <div class="modal-footer">
+    <a type="button" id="cancelarCta" data-dismiss="modal" class="btn btn-default">Cancelar</a>
+    <a type="button" id="cerrarCta" data-dismiss="modal" class="btn btn-default">Cerrar</a>
+    <a type="button" id="addCta" class="btn btn-success">Aceptar</a>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+
+
 	<script type="text/javascript">
 	$(document).ready(function () {
 		$('#aceptar').click(function(event) {
@@ -234,9 +374,10 @@
 
 
         	// var FechaApp = document.getElementById("FechaApp");
-        	// $("#ctFecha").text(FechaApp.value);
+        	// $("#ctaFecha").text(FechaApp.value);
         	var token = document.getElementById("token");
-        	$("#txtToken").text(token.value)
+        	$("#txtToken").text(token.value);
+		
 
         	var importe = document.getElementById("importe");
         	$("#txtImporte").text(importe.value);
@@ -254,7 +395,35 @@
         	$( "#aceptar2" ).hide();
         	$( "#cancelar" ).hide();
 		});
+
+
+		$('#addCta').click(function(event) {
+        	$( "#NuevaCuenta" ).hide();
+        	$( "#NuevaCuenta2" ).show();
+        	$( "#cerrarCta" ).show();
+        	$( "#cancelarCta" ).hide();
+		});
+
 		
+
+		$('#cancelarCta').click(function(event) {
+        	$( "#NuevaCuenta" ).show();
+        	$( "#NuevaCuenta2" ).hide();
+        	$( "#cerrarCta" ).hide();
+		});
+
+
+		$('#cerrarCta').click(function(event) {
+        	$( "#NuevaCuenta" ).show();
+        	$( "#NuevaCuenta2" ).hide();
+        	$( "#cerrarCta" ).hide();
+        	$("cancelarCta").show();
+		});
+
+		
+
+
+
 		// $('#aceptar3').click(function(event) {
 		// 	$( "#TransCuentaPropia" ).show();
   //       	$( "#TransCuentaPropiaConfirmar" ).hide();

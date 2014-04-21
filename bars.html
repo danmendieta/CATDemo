@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<title>Catscap</title>
+	<title>Catscap - Inversiones</title>
 </head>
 <body>
 	<div class="toolbar_dummy"><div class="dark_line"></div></div>
@@ -60,13 +60,70 @@
 			</div>  <!-- Termina Navigation Bar --> 
 
 			<div id="content">
+
+
+						<div class="espacio100"></div>
+
+						<div class="form-group">
+						        <label class="col-sm-4 control-label">Total</label>
+						        <div class="col-sm-8">
+						          <input type="number" class="form-control" id="total" value='15000' placeholder="$ Importe">
+						        </div>
+						      </div>
+
+						 <div class="form-group">
+						        <label class="col-sm-4 control-label">Procentaje(importe)</label>
+						        <div class="col-sm-8">
+						          <input type="number" class="form-control" id="parcial" value='3750' placeholder="$ Importe">
+						        </div>
+						      </div>
+
+						<div class="form-group">
+						        <div class="col-sm-offset-4 col-sm-8">
+						          <button id="aceptar" class="btn btn-success"><i class="fa fa-check-circle"></i>  Recalcular porcentaje</button>
+						        </div>
+						      </div>
+
+
+						<div class="progress progress-striped" style="width: 100%">
+					      <div id="barr" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+					        <span class="sr-only"></span>
+					      </div>
+					    </div>
+
 				
-			
-
-
 			</div> <!-- Termina Content -->
 
 		</div> <!-- Termina Main -->
 	</div> <!-- Termina Wrapper -->
+
+<script type="text/javascript">
+	
+	 $('#aceptar').click(function(){
+	 	var total = $('#total').val();
+	 	var parcial = $('#parcial').val();
+	 	var idBAr = "#barr";
+
+	 	actualizaBar(idBAr,total,parcial);
+
+                           
+     });
+
+   
+     function actualizaBar(namBAr,total,actual){
+
+     	//calcular porcentaje
+     	var porcentaje = (actual*100)/total;
+
+     		$( namBAr ).width( porcentaje+'%' ).addClass( "mod" );
+	
+
+
+     }
+       
+                        
+
+</script>
+
 </body>
 </html>

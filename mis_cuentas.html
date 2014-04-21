@@ -1,9 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Catscap - Mis Cuentas</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<title>Catscap - Mis Cuentas</title>
+	<link rel="stylesheet" type="text/css" href="css/docs.min.css" />
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	<script type="text/javascript">
+		 google.load('visualization', '1', {packages: ['table']});
+
+
+
+		 function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Cuentas de Ahorro');
+        data.addColumn('number', 'Saldo Actual');
+        data.addColumn('number', 'Transito');
+        data.addColumn('number', 'Pignoración Garantía');
+        data.addColumn('number', 'Pignoración Cobranza');
+        data.addColumn('number', 'Saldo Disponible');
+        data.addRows([
+          ['Despositos Vista',10000,1000,5000,3500,500],
+          ['Ahorro Infantil',10000,1000,5000,3500,500],
+          ['Cuenta Ahorro',10000,1000,5000,3500,500],
+          ['Ahorro Infantil Plus',10000,1000,5000,3500,500],
+          ['Cuenta Uno',10000,1000,5000,3500,500]
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {showRowNumber: true});
+      }
+
+      google.setOnLoadCallback(drawTable);
+
+       function drawTable2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Fecha');
+        data.addColumn('string', 'Concepto');
+        data.addColumn('number', 'Cargo');
+        data.addColumn('number', 'Abono');
+        data.addColumn('number', 'Saldo');
+        data.addRows([
+          ['18/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['15/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['13/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['12/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['08/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['07/03/2014','Desposito en ventanilla',1000,5000,3500],
+          ['01/03/2014','Desposito en ventanilla',1000,5000,3500]
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div2'));
+        table.draw(data, {showRowNumber: true});
+      }
+
+      google.setOnLoadCallback(drawTable2);
+
+
+
+       // Note: This sample shows the select event.
+// The select event is a generic select event,
+// for selecting rows, columns, and cells.
+// However, in this example, only rows are selected.
+// Read more here: http://code.google.com/apis/visualization/documentation/gallery/table.html#Events
+
+function drawVisualization() {
+  visualization = new google.visualization.Table(document.getElementById('table'));
+  visualization.draw(data, null);
+
+  // Add our selection handler.
+  google.visualization.events.addListener(visualization, 'select', selectHandler);
+}
+
+// The selection handler.
+// Loop through all items in the selection and concatenate
+// a single message from all of them.
+function selectHandler() {
+  var selection = visualization.getSelection();
+  var message = '';
+  for (var i = 0; i < selection.length; i++) {
+    var item = selection[i];
+    if (item.row != null && item.column != null) {
+      var str = data.getFormattedValue(item.row, item.column);
+      message += '{row:' + item.row + ',column:' + item.column + '} = ' + str + '\n';
+    } else if (item.row != null) {
+      var str = data.getFormattedValue(item.row, 0);
+      message += '{row:' + item.row + ', (no column, showing first)} = ' + str + '\n';
+    } else if (item.column != null) {
+      var str = data.getFormattedValue(0, item.column);
+      message += '{(no row, showing first), column:' + item.column + '} = ' + str + '\n';
+    }
+  }
+  if (message == '') {
+    message = 'nothing';
+  }
+  alert('You selected ' + message);
+}
+
+
+
+
+	</script>
 </head>
 <body>
 	<div class="toolbar_dummy"><div class="dark_line"></div></div>
@@ -11,16 +117,19 @@
 		<div class="main">
 	
 			<div id="sidebar">
-				<a href="index.html" class="logo"></a>
+				<a href="principal.html" class="logo"></a>
 				<div class="shadow_left"></div>
 				<div class="shadow_right"></div>
 				<div class="toolbar_side">
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="transferencia.html" class="boton_sidebar transferencia_sidebar">Transferencia</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="inversion.html" class="boton_sidebar inversion_sidebar">Inversión</a>
-					<div class="sep_sidebar"><div class="sep_sidebar2"></div></div>
-					<a href="configuracion.html" class="boton_sidebar configuracion_sidebar">Configuración</a>
+					<div class="sep_sidebar2"></div>
+					<div class="separador"></div>
+					<a href="transferencia.html" type="button" class="btn btn-default b100"><i class="fa fa-arrow-circle-o-right"></i>  Transferencia</a>
+					<div class="separador"></div>
+          	        <a  href="inversion.html" type="button" class="btn btn-default b100"><i class="fa fa-money"></i>  Inversión</a>
+          	    
+          	        <div class="separador"></div>
+          	        <a  href="configuracion.html" type="button" class="btn btn-default b100"><i class="fa fa-cog"></i>  Configuración</a>
+          	   
 				</div>
 			</div> <!-- Termina Sidebar  -->
 
@@ -35,6 +144,11 @@
 						<div class="inversiones_img"></div>Inversiones
 					</span>
 				</a>
+				<a href="creditos.html" class="boton_menu">
+					<span class="icono_texto">
+						<div class="mis_cuentas_img"></div>Créditos
+					</span>
+				</a>
 				<a href="reportes.html" class="boton_menu">
 					<span class="icono_texto">
 						<div class="reportes_img"></div>Reportes
@@ -44,284 +158,46 @@
 			</div>  <!-- Termina Navigation Bar --> 
 
 			<div id="content">
-				
-				<div class="info_separador_grande">
-					<span class="info_separador_grande_titulos isg_cuentas">Cuentas de Ahorro</span>
-					<span class="info_separador_grande_titulos isg_saldo_actual isg_proto">Saldo <br />Actual</span>
-					<span class="info_separador_grande_titulos isg_transito isg_proto">Transito</span>
-					<span class="info_separador_grande_titulos isg_picnoracion_garantia isg_proto">Pignoración <br />Garantía</span>
-					<span class="info_separador_grande_titulos isg_picnoracion_cobranza isg_proto">Pignoración <br />Cobranza</span>
-					<span class="info_separador_grande_titulos isg_saldo_disponible isg_proto">Saldo <br />Disponible</span>
-				</div>
 
-				<ul class="lista_azul lista_azul_cuentas">
-					<div class="separador_lista_azul sla_1"></div>
-					<div class="separador_lista_azul sla_2"></div>
-					<div class="separador_lista_azul sla_3"></div>
-					<div class="separador_lista_azul sla_4"></div>
-					<div class="separador_lista_azul sla_5"></div>
-					<li>
-						<span class="lac_cuentas"><a href="#cuenta_1">Depositos Vista</a></span>
-						<span class="lac_saldo_actual">$10,000.00</span>
-						<span class="lac_transito">$1,000.00</span>
-						<span class="lac_pic_garantia">$5,000.00</span>
-						<span class="lac_pic_cobranza">$3,500.00</span>
-						<span class="lac_saldo_disponible">$500.00</span>
-					</li>
-					<li class="non">
-						<span class="lac_cuentas"><a href="#cuenta_2">Cuenta Ahorro Infantil</a></span>
-						<span class="lac_saldo_actual">$600.00</span>
-						<span class="lac_transito">-</span>
-						<span class="lac_pic_garantia">-</span>
-						<span class="lac_pic_cobranza">-</span>
-						<span class="lac_saldo_disponible">$600.00</span>
-					</li>
-					<li>
-						<span class="lac_cuentas"><a href="#cuenta_3">Cuenta Ahorro</a></span>
-						<span class="lac_saldo_actual">$1,450.00</span>
-						<span class="lac_transito">$500.00</span>
-						<span class="lac_pic_garantia">-</span>
-						<span class="lac_pic_cobranza">-</span>
-						<span class="lac_saldo_disponible">$950.00</span>
-					</li>
-					<li class="non">
-						<span class="lac_cuentas"><a href="#cuenta_4">Ahorro Infantil Plus</a></span>
-						<span class="lac_saldo_actual">$15,000.00</span>
-						<span class="lac_transito">-</span>
-						<span class="lac_pic_garantia">-</span>
-						<span class="lac_pic_cobranza">-</span>
-						<span class="lac_saldo_disponible">$15,000.00</span>
-					</li>
-					<li>
-						<span class="lac_cuentas"><a href="#cuenta_5">Cuenta Uno</a></span>
-						<span class="lac_saldo_actual">-</span>
-						<span class="lac_transito">-</span>
-						<span class="lac_pic_garantia">-</span>
-						<span class="lac_pic_cobranza">-</span>
-						<span class="lac_saldo_disponible">-</span>
-					</li>
-				</ul>
+				<div class='UsrName'><h1>Resumen de Cuentas</h1></div>
+				<div class='UsrName'><h2>Seleccione una cuenta para conocer el detalle</h2></div>
+
+				<div class="espacioSmall"></div>
+				<div id='table_div'></div>
+
+				
 				<div class="saldo_actual_verde">$17,050.00</div>
 
+				
+				<div class="espacioSmall"></div>
+				
 
+				
 
-				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-
-				<h2 id="cuenta_1" class="titulo_verde">Depositos Vista</h2>
-				<div class="info_separador">
-					<span class="info_separador_fecha">Fecha</span>
-					<span class="info_separador_concepto">Concepto</span>
-					<span class="info_separador_cargo">Cargo</span>
-					<span class="info_separador_abono">Abono</span>
-					<span class="info_separador_saldo">Saldo</span>
-				</div>
-				<ul class="lista_azul">
-					<li>
-						<span class="lista_azul_fecha">18-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$1,500.00</span>
-						<span class="lista_azul_saldo">4,500.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">10-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,090.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">3,000.00</span>
-					</li>
-					<li>
-						<span class="lista_azul_fecha">05-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$3,000.00</span>
-						<span class="lista_azul_saldo">4,090.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">04-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,200.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">1,090.00</span>
-					</li>
-				</ul>
-
-				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-
-				<h2 id="cuenta_2" class="titulo_verde">Cuenta Ahorro Infantil</h2>
-				<div class="info_separador">
-					<span class="info_separador_fecha">Fecha</span>
-					<span class="info_separador_concepto">Concepto</span>
-					<span class="info_separador_cargo">Cargo</span>
-					<span class="info_separador_abono">Abono</span>
-					<span class="info_separador_saldo">Saldo</span>
-				</div>
-				<ul class="lista_azul">
-					<li>
-						<span class="lista_azul_fecha">18-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$1,500.00</span>
-						<span class="lista_azul_saldo">4,500.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">10-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,090.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">3,000.00</span>
-					</li>
-					<li>
-						<span class="lista_azul_fecha">05-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$3,000.00</span>
-						<span class="lista_azul_saldo">4,090.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">04-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,200.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">1,090.00</span>
-					</li>
-				</ul>
 
 
 
 
 				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-
-				<h2 id="cuenta_3" class="titulo_verde">Cuenta Ahorro</h2>
-				<div class="info_separador">
-					<span class="info_separador_fecha">Fecha</span>
-					<span class="info_separador_concepto">Concepto</span>
-					<span class="info_separador_cargo">Cargo</span>
-					<span class="info_separador_abono">Abono</span>
-					<span class="info_separador_saldo">Saldo</span>
-				</div>
-				<ul class="lista_azul">
-					<li>
-						<span class="lista_azul_fecha">18-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$1,500.00</span>
-						<span class="lista_azul_saldo">4,500.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">10-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,090.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">3,000.00</span>
-					</li>
-					<li>
-						<span class="lista_azul_fecha">05-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$3,000.00</span>
-						<span class="lista_azul_saldo">4,090.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">04-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,200.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">1,090.00</span>
-					</li>
-				</ul>
-
-
-
-
-				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-
-				<h2 id="cuenta_4" class="titulo_verde">Ahorro Infantil Plus</h2>
-				<div class="info_separador">
-					<span class="info_separador_fecha">Fecha</span>
-					<span class="info_separador_concepto">Concepto</span>
-					<span class="info_separador_cargo">Cargo</span>
-					<span class="info_separador_abono">Abono</span>
-					<span class="info_separador_saldo">Saldo</span>
-				</div>
-				<ul class="lista_azul">
-					<li>
-						<span class="lista_azul_fecha">18-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$1,500.00</span>
-						<span class="lista_azul_saldo">4,500.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">10-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,090.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">3,000.00</span>
-					</li>
-					<li>
-						<span class="lista_azul_fecha">05-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$3,000.00</span>
-						<span class="lista_azul_saldo">4,090.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">04-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,200.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">1,090.00</span>
-					</li>
-				</ul>
-
-
-
-
-				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-
-				<h2 id="cuenta_5" class="titulo_verde">Cuenta Uno</h2>
-				<div class="info_separador">
-					<span class="info_separador_fecha">Fecha</span>
-					<span class="info_separador_concepto">Concepto</span>
-					<span class="info_separador_cargo">Cargo</span>
-					<span class="info_separador_abono">Abono</span>
-					<span class="info_separador_saldo">Saldo</span>
-				</div>
-				<ul class="lista_azul">
-					<li>
-						<span class="lista_azul_fecha">18-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$1,500.00</span>
-						<span class="lista_azul_saldo">4,500.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">10-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,090.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">3,000.00</span>
-					</li>
-					<li>
-						<span class="lista_azul_fecha">05-Marzo-2014</span>
-						<span class="lista_azul_concepto">Deposito en ventanilla</span>
-						<span class="lista_azul_cargo"></span>
-						<span class="lista_azul_abono">$3,000.00</span>
-						<span class="lista_azul_saldo">4,090.00</span>
-					</li>
-					<li class="non">
-						<span class="lista_azul_fecha">04-Marzo-2014</span>
-						<span class="lista_azul_concepto">Retiro en ventanilla</span>
-						<span class="lista_azul_cargo">$1,200.00</span>
-						<span class="lista_azul_abono"></span>
-						<span class="lista_azul_saldo">1,090.00</span>
-					</li>
-				</ul>
+				<div class='UsrName' id="cuenta_5" ><h1>CUENTA: Cuenta Uno</h1></div>
+				<div class="comboDer">
+					<div class="btn-group">
+						<p class="saldo_actual">
+		          					$12,680.00
+		          				</p>
+		  
+	    			</div>
+	    			<div id='table_div2'></div>
+	    			<div id='table'></div>
+	    		</div>
+					
 				
 			</div> <!-- Termina Content -->
 
 		</div> <!-- Termina Main -->
 	</div> <!-- Termina Wrapper -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/docs.min.js"></script>
 </body>
 </html>
