@@ -1154,6 +1154,7 @@ body{
 
 .espacio22{
 	height: 20px;
+	/*Espacios no contemplrlos en divs vacios*/
 }
 
 

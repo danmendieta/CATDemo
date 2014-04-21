@@ -15,101 +15,12 @@
 	
 	<script type="text/javascript">
 		 google.load('visualization', '1', {packages: ['table']});
-
-
-
-		 function drawTable() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Cuentas de Ahorro');
-        data.addColumn('number', 'Saldo Actual');
-        data.addColumn('number', 'Transito');
-        data.addColumn('number', 'Pignoración Garantía');
-        data.addColumn('number', 'Pignoración Cobranza');
-        data.addColumn('number', 'Saldo Disponible');
-        data.addRows([
-          ['Despositos Vista',10000,1000,5000,3500,500],
-          ['Ahorro Infantil',10000,1000,5000,3500,500],
-          ['Cuenta Ahorro',10000,1000,5000,3500,500],
-          ['Ahorro Infantil Plus',10000,1000,5000,3500,500],
-          ['Cuenta Uno',10000,1000,5000,3500,500]
-
-        ]);
-
-        var table = new google.visualization.Table(document.getElementById('table_div'));
-        table.draw(data, {showRowNumber: true});
-      }
-
-      google.setOnLoadCallback(drawTable);
-
-       function drawTable2() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Fecha');
-        data.addColumn('string', 'Concepto');
-        data.addColumn('number', 'Cargo');
-        data.addColumn('number', 'Abono');
-        data.addColumn('number', 'Saldo');
-        data.addRows([
-          ['18/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['15/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['13/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['12/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['08/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['07/03/2014','Desposito en ventanilla',1000,5000,3500],
-          ['01/03/2014','Desposito en ventanilla',1000,5000,3500]
-
-        ]);
-
-        var table = new google.visualization.Table(document.getElementById('table_div2'));
-        table.draw(data, {showRowNumber: true});
-      }
-
-      google.setOnLoadCallback(drawTable2);
-
-
-
-       // Note: This sample shows the select event.
-// The select event is a generic select event,
-// for selecting rows, columns, and cells.
-// However, in this example, only rows are selected.
-// Read more here: http://code.google.com/apis/visualization/documentation/gallery/table.html#Events
-
-function drawVisualization() {
-  visualization = new google.visualization.Table(document.getElementById('table'));
-  visualization.draw(data, null);
-
-  // Add our selection handler.
-  google.visualization.events.addListener(visualization, 'select', selectHandler);
-}
-
-// The selection handler.
-// Loop through all items in the selection and concatenate
-// a single message from all of them.
-function selectHandler() {
-  var selection = visualization.getSelection();
-  var message = '';
-  for (var i = 0; i < selection.length; i++) {
-    var item = selection[i];
-    if (item.row != null && item.column != null) {
-      var str = data.getFormattedValue(item.row, item.column);
-      message += '{row:' + item.row + ',column:' + item.column + '} = ' + str + '\n';
-    } else if (item.row != null) {
-      var str = data.getFormattedValue(item.row, 0);
-      message += '{row:' + item.row + ', (no column, showing first)} = ' + str + '\n';
-    } else if (item.column != null) {
-      var str = data.getFormattedValue(0, item.column);
-      message += '{(no row, showing first), column:' + item.column + '} = ' + str + '\n';
-    }
-  }
-  if (message == '') {
-    message = 'nothing';
-  }
-  alert('You selected ' + message);
-}
-
-
-
-
+		 $( document ).ready(function() {
+    $('#table_div2').hide();
+});
+		
 	</script>
+
 </head>
 <body>
 	<div class="toolbar_dummy"><div class="dark_line"></div></div>
@@ -163,7 +74,7 @@ function selectHandler() {
 				<div class='UsrName'><h2>Seleccione una cuenta para conocer el detalle</h2></div>
 
 				<div class="espacioSmall"></div>
-				<div id='table_div'></div>
+				<div id='table'></div>
 
 				
 				<div class="saldo_actual_verde">$17,050.00</div>
@@ -179,25 +90,20 @@ function selectHandler() {
 
 
 				<div class="separador_contenido"><div class="separador_contenido2"></div></div>
-				<div class='UsrName' id="cuenta_5" ><h1>CUENTA: Cuenta Uno</h1></div>
-				<div class="comboDer">
-					<div class="btn-group">
-						<p class="saldo_actual">
-		          					$12,680.00
-		          				</p>
-		  
-	    			</div>
-	    			<div id='table_div2'></div>
-	    			<div id='table'></div>
-	    		</div>
-					
+				<div class='UsrName' id="cuenta_5" ><h1 id="tittleTabla"></h1></div>
+				<div id='table_div2'></div>
+			</div>
+
 				
-			</div> <!-- Termina Content -->
 
 		</div> <!-- Termina Main -->
 	</div> <!-- Termina Wrapper -->
+
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/docs.min.js"></script>
+<script type="text/javascript" src="js/tables.js"></script>
 </body>
 </html>
